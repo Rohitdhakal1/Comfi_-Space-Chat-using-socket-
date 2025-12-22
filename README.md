@@ -14,10 +14,6 @@ A lightweight, real-time chat application built to demonstrate **WebSocket-based
 
 ---
 
-## 📸 Screenshots
-
-*(Add a screenshot of your application here to show off the UI)*
-
 ---
 
 ## ✨ Features
@@ -59,7 +55,9 @@ Follow these steps to run the application locally.
 Bash
 
 git clone [https://github.com/Rohitdhakal1/Comfi_-Space-Chat-using-socket-.git](https://github.com/Rohitdhakal1/Comfi_-Space-Chat-using-socket-.git)
+
 cd Comfi_-Space-Chat-using-socket-
+
 2. Setup Backend Server
 Open a terminal, navigate to the server folder, install dependencies, and start the server.
 
@@ -91,15 +89,13 @@ Message: When a user types a message, it is emitted to the server, which broadca
 
 Events: Connection and disconnection events trigger updates to the "Online Users" list in real-time.
 
-🔮 Future Improvements
+🔮 Future Improvements ->>
+
 Since this project is designed for learning, here are potential features to add for a production-ready app:
 
 [ ] Persistence: Integrate MongoDB or Redis to save chat history.
-
 [ ] Authentication: Add Login/Signup (JWT or OAuth).
-
 [ ] Rooms: Allow users to create and join specific chat rooms.
-
 [ ] Multimedia: Support for image and file sharing.
 
 📜 License
