@@ -1,6 +1,6 @@
 💬 Real-Time Chat Application (Socket.IO + React)
 
-A simple real-time chat application built to demonstrate WebSocket-based communication using Socket.IO with a React + TypeScript frontend and an Express backend.
+A simple real-time chat application built to demonstrate WebSocket-based communication using Socket.IO, with a React + TypeScript frontend and an Express backend.
 
 This project focuses on real-time messaging, user presence, and UI behavior.
 All data (users and messages) is stored in server memory — no database is used.
@@ -20,7 +20,6 @@ Responsive chat UI
 In-memory message handling (no database)
 
 🛠 Tech Stack
-
 Frontend
 
 React
@@ -48,17 +47,17 @@ Socket.IO
 🚀 Getting Started (Run Locally)
 1️⃣ Clone the repository
 git clone https://github.com/Rohitdhakal1/Comfi_-Space-Chat-using-socket-.git
-cd YOUR_REPO_NAME
+cd Comfi_-Space-Chat-using-socket-
 
-2️⃣ Install dependencies
+2️⃣ Install dependencies & run the app
 Frontend
 cd client
 npm install
 npm run dev
 
 
-Frontend runs on:
-http://localhost:5173
+Frontend runs at:
+👉 http://localhost:5173
 
 Backend
 cd server
@@ -66,14 +65,14 @@ npm install
 npm run dev
 
 
-Backend runs on:
-http://localhost:8080
+Backend runs at:
+👉 http://localhost:8080
 
 🔌 How It Works
 
-Users connect via Socket.IO
+Users connect to the server using Socket.IO
 
-Messages and users are stored temporarily in server memory
+Messages and user data are stored temporarily in server memory
 
 When a user joins or leaves, all connected clients are updated instantly
 
@@ -85,9 +84,9 @@ This project is intended for learning and demonstration purposes
 
 Messages are cleared when the server restarts
 
-Can be extended with:
+The app can be extended with:
 
-Database (MongoDB / Redis)
+Database integration (MongoDB / Redis)
 
 User authentication
 
@@ -101,9 +100,9 @@ Understanding WebSocket communication
 
 Managing real-time events with Socket.IO
 
-React component design for live data
+Designing React components for live data
 
-TypeScript usage in full-stack applications
+Using TypeScript in a full-stack application
 
 📜 License
 
