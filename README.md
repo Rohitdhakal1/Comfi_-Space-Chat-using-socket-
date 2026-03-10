@@ -88,13 +88,13 @@ npm run dev     # http://localhost:5173
 
 ## Planned Features
 
-- [ ] Persistent storage — MongoDB or Redis
-- [ ] Authentication — JWT or OAuth
-- [ ] Chat rooms
-- [ ] Private messaging
-- [ ] Typing indicators
-- [ ] File and image sharing
-- [ ] Deployment — Render / Vercel
+- 1) Persistent storage — MongoDB or Redis
+- 2) Authentication — JWT or OAuth
+- 3) Chat rooms
+- 4) Private messaging
+- 5) Typing indicators
+-  6) File and image sharing
+- 7) Deployment — Render / Vercel
 
 ---
 
