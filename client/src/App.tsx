@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import type { User } from "./interface";
 import { socket } from './services/Socket';
 import Login from './components/login';
@@ -15,8 +15,7 @@ function App() {
 
   }
 
-  const handleLogout = (username:string)=>{
-    socket.emit("userLeft",username);
+  const handleLogout = ()=>{
     socket.disconnect();
     setCurrentUser(null);
   }
@@ -25,7 +24,7 @@ function App() {
 
   return (
     <>
-   <div className='min-h-screen bg-grey-100 flex flex-col'>
+   <div className='min-h-screen bg-[#0d0d0d] flex flex-col'>
     { 
       !currentUser ? <Login onLogin={handleLogin}/>
                   : <Chat currentUser={currentUser} onLogout={handleLogout}/>

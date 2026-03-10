@@ -1,15 +1,23 @@
-import React from 'react'
 import type { NotificationProps } from '../interface'
-import {  FiLogOut, FiUserPlus } from 'react-icons/fi'
+import { FiLogOut, FiMessageSquare, FiUserPlus } from 'react-icons/fi'
 
 function Notification({text,type}:NotificationProps) {
   return (
-    <div className={`text-center py-2 text-sm font-medium animate-fade-in flex items-center justify-center space-x-2 ${type==="JOIN"?"bg-green-100 text-green-800":type==="leave"?"bg-amber-100 text-amber-800":"bg-blue-100 text-blue-800"} `}>
-      {
-        type==="JOIN" ? <FiUserPlus className='h-4 w-4 '/>:<FiLogOut className='h-4 w-4'/>
+    <div className={`text-center py-2 text-sm font-medium animate-fade-in flex items-center justify-center space-x-2 border-b
+      ${type==="JOIN"
+        ? "bg-green-500/10 text-green-400 border-green-500/20"
+        : type==="leave"
+        ? "bg-yellow-500/10 text-yellow-400 border-yellow-500/20"
+        : "bg-blue-500/10 text-blue-400 border-blue-500/20"
+      }`}>
+      {type==="JOIN"
+        ? <FiUserPlus className='h-4 w-4'/>
+        : type==="leave"
+        ? <FiLogOut className='h-4 w-4'/>
+        : <FiMessageSquare className='h-4 w-4'/>
       }
       <span>{text}</span>
-      </div>
+    </div>
   )
 }
 
