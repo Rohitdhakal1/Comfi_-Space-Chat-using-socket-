@@ -1,40 +1,34 @@
-# Comfi Space — Real-Time Chat
+# Comfi_ Space — Real-Time Chat
 
-A simple real-time chat app built using **React + TypeScript** on the frontend and **Node.js + Socket.IO** on the backend.
+[![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-43853D?style=flat-square&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![Socket.IO](https://img.shields.io/badge/Socket.IO-010101?style=flat-square&logo=socket.io&logoColor=white)](https://socket.io/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Status](https://img.shields.io/badge/Status-In%20Development-yellow?style=flat-square)]()
 
-The goal of this project was to understand how **WebSockets work** and how real-time communication can be implemented between multiple users.
+A real-time group chat application built with React, TypeScript, and Socket.IO. Built to understand how WebSocket-based communication works between multiple users.
 
-Right now the app uses **in-memory storage**, so messages are lost when the server restarts. Persistent storage will be added later.
+> Uses **in-memory storage** — messages reset when the server restarts. Persistence is planned.
 
 ---
 
 ## Features
 
-* Real-time messaging using Socket.IO
-* Live list of online users
-* Join / leave notifications
-* Message timestamps
-* Dark themed UI (black + green)
-* Simple avatar icon generated from username
+- Real-time messaging via Socket.IO
+- Live online user list with avatars
+- Join / leave notifications
+- Message timestamps and double-tick indicator
+- Dark UI — black and green theme
+- Message history restored on reconnect
 
 ---
 
 ## Tech Stack
 
-### Frontend
+**Frontend** — React 19, TypeScript, Tailwind CSS v4, Socket.IO Client, React Icons
 
-* React (Vite)
-* TypeScript
-* Tailwind CSS
-* Socket.IO Client
-* React Icons
-
-### Backend
-
-* Node.js
-* Express
-* Socket.IO
-* TypeScript
+**Backend** — Node.js, Express, Socket.IO, TypeScript
 
 ---
 
@@ -42,88 +36,68 @@ Right now the app uses **in-memory storage**, so messages are lost when the serv
 
 ```
 Comfi_-Space-Chat-using-socket-/
-│
 ├── backend/
 │   └── src/
-│       ├── index.ts
-│       └── interface.ts
-│
+│       ├── index.ts          # Server, Socket.IO events
+│       └── interface.ts      # User, Message types
 ├── client/
 │   └── src/
-│       ├── components/
+│       ├── components/       # Chat, Header, Sidebar, Login, Notification, MessageComponent
 │       ├── services/
-│       │   └── Socket.ts
-│       ├── interface.ts
-│       ├── helper.tsx
-│       └── App.tsx
-│
-├── .gitignore
-└── README.md
+│       │   └── Socket.ts     # Socket.IO client instance
+│       ├── interface.ts      # Frontend interfaces
+│       ├── helper.tsx        # User avatar icon generator
+│       └── App.tsx           # Root component
+└── .gitignore
 ```
 
 ---
 
-## Running the Project
+## Getting Started
 
-### 1. Clone the repository
-
-```
+**1. Clone**
+```bash
 git clone https://github.com/Rohitdhakal1/Comfi_-Space-Chat-using-socket-.git
 cd Comfi_-Space-Chat-using-socket-
 ```
 
-### 2. Start the backend
-
-```
+**2. Run the backend**
+```bash
 cd backend
 npm install
-npm run dev
+npm run dev     # http://localhost:8080
 ```
 
-Server runs on:
-
-```
-http://localhost:8080
-```
-
-### 3. Start the frontend
-
-```
+**3. Run the frontend**
+```bash
 cd client
 npm install
-npm run dev
-```
-
-Frontend runs on:
-
-```
-http://localhost:5173
+npm run dev     # http://localhost:5173
 ```
 
 ---
 
-## How it works
+## How It Works
 
-When a user enters a username, the client connects to the server through Socket.IO.
-The server keeps track of connected users and broadcasts messages to everyone in the chat.
-
-Users joining or leaving are also broadcast so the online list updates in real time.
+1. User enters a username → client connects and emits `JOIN`
+2. Server stores the user and broadcasts the updated user list
+3. Messages are emitted to the server and broadcast to all clients
+4. Disconnect events remove the user and notify everyone
 
 ---
 
-## Possible Improvements
+## Planned Features
 
-Things I plan to add later:
-
-* Database for persistent messages
-* Authentication (JWT / OAuth)
-* Chat rooms
-* Private messages
-* Typing indicators
-* Deployment
+- [ ] Persistent storage — MongoDB or Redis
+- [ ] Authentication — JWT or OAuth
+- [ ] Chat rooms
+- [ ] Private messaging
+- [ ] Typing indicators
+- [ ] File and image sharing
+- [ ] Deployment — Render / Vercel
 
 ---
 
 ## License
 
-This project is open for learning and experimentation.
+Open-source. Free to use for learning and experimentation.
