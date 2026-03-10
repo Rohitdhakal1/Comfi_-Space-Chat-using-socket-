@@ -1,102 +1,129 @@
-Markdown
+# Comfi Space — Real-Time Chat
 
-# 💬 Comfi Space Chat
+A simple real-time chat app built using **React + TypeScript** on the frontend and **Node.js + Socket.IO** on the backend.
 
-[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
-[![Socket.io](https://img.shields.io/badge/Socket.io-010101?style=for-the-badge&logo=socket.io&logoColor=white)](https://socket.io/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+The goal of this project was to understand how **WebSockets work** and how real-time communication can be implemented between multiple users.
 
-A lightweight, real-time chat application built to demonstrate **WebSocket-based communication**. This project features a **React + TypeScript** frontend and an **Express** backend, utilizing **Socket.IO** for instant bi-directional messaging.
-
-> **Note:** This project utilizes in-memory storage. All data (users and messages) is reset when the server restarts.
+Right now the app uses **in-memory storage**, so messages are lost when the server restarts. Persistent storage will be added later.
 
 ---
 
----
+## Features
 
-## ✨ Features
-
-* **⚡ Real-time Messaging:** Instant message delivery using Socket.IO.
-* **🟢 User Presence:** See a live list of online users.
-* **🔔 Notifications:** Automatic alerts when users join or leave the chat.
-* **⏱️ Timestamps:** Accurate time display for every message.
-* **📱 Responsive UI:** Clean interface built with Tailwind CSS.
-* **🚀 No Database Required:** Lightweight architecture using server-side memory.
+* Real-time messaging using Socket.IO
+* Live list of online users
+* Join / leave notifications
+* Message timestamps
+* Dark themed UI (black + green)
+* Simple avatar icon generated from username
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Frontend
-* **Framework:** React (Vite)
-* **Language:** TypeScript
-* **Styling:** Tailwind CSS
+
+* React (Vite)
+* TypeScript
+* Tailwind CSS
+* Socket.IO Client
+* React Icons
 
 ### Backend
-* **Runtime:** Node.js
-* **Server:** Express
-* **Real-time Engine:** Socket.IO
+
+* Node.js
+* Express
+* Socket.IO
+* TypeScript
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
-```bash
-.
-├── client/        # React + Vite frontend source
-├── server/        # Express + Socket.IO backend source
-└── README.md      # Project documentation
-🚀 Getting Started
-Follow these steps to run the application locally.
+```
+Comfi_-Space-Chat-using-socket-/
+│
+├── backend/
+│   └── src/
+│       ├── index.ts
+│       └── interface.ts
+│
+├── client/
+│   └── src/
+│       ├── components/
+│       ├── services/
+│       │   └── Socket.ts
+│       ├── interface.ts
+│       ├── helper.tsx
+│       └── App.tsx
+│
+├── .gitignore
+└── README.md
+```
 
-1. Clone the Repository
-Bash
+---
 
-git clone [https://github.com/Rohitdhakal1/Comfi_-Space-Chat-using-socket-.git](https://github.com/Rohitdhakal1/Comfi_-Space-Chat-using-socket-.git)
+## Running the Project
 
+### 1. Clone the repository
+
+```
+git clone https://github.com/Rohitdhakal1/Comfi_-Space-Chat-using-socket-.git
 cd Comfi_-Space-Chat-using-socket-
+```
 
-2. Setup Backend Server
-Open a terminal, navigate to the server folder, install dependencies, and start the server.
+### 2. Start the backend
 
-Bash
-
-cd server
+```
+cd backend
 npm install
 npm run dev
-The backend will start on http://localhost:8080
+```
 
-3. Setup Frontend Client
-Open a new terminal window, navigate to the client folder, install dependencies, and start the React app.
+Server runs on:
 
-Bash
+```
+http://localhost:8080
+```
 
+### 3. Start the frontend
+
+```
 cd client
 npm install
 npm run dev
-The frontend will run at http://localhost:5173
+```
 
-🔌 How It Works
-Connection: When a user opens the app, the React client connects to the Express server via a WebSocket handshake.
+Frontend runs on:
 
-State Management: The server maintains a list of connected socket IDs and user details in memory.
+```
+http://localhost:5173
+```
 
-Broadcasting:
+---
 
-Message: When a user types a message, it is emitted to the server, which broadcasts it to all other connected clients.
+## How it works
 
-Events: Connection and disconnection events trigger updates to the "Online Users" list in real-time.
+When a user enters a username, the client connects to the server through Socket.IO.
+The server keeps track of connected users and broadcasts messages to everyone in the chat.
 
-🔮 Future Improvements ->>
+Users joining or leaving are also broadcast so the online list updates in real time.
 
-Since this project is designed for learning, here are potential features to add for a production-ready app:
+---
 
-[ ] Persistence: Integrate MongoDB or Redis to save chat history.
-[ ] Authentication: Add Login/Signup (JWT or OAuth).
-[ ] Rooms: Allow users to create and join specific chat rooms.
-[ ] Multimedia: Support for image and file sharing.
+## Possible Improvements
 
-📜 License
-This project is open-source and available for learning purposes. Feel free to fork and improve it!
+Things I plan to add later:
+
+* Database for persistent messages
+* Authentication (JWT / OAuth)
+* Chat rooms
+* Private messages
+* Typing indicators
+* Deployment
+
+---
+
+## License
+
+This project is open for learning and experimentation.
