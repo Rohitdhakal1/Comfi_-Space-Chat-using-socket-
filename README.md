@@ -93,7 +93,7 @@ npm run dev     # http://localhost:5173
 - 3) Chat rooms
 - 4) Private messaging
 - 5) Typing indicators
--  6) File and image sharing
+- 6) File and image sharing
 - 7) Deployment — Render / Vercel
 
 ---
